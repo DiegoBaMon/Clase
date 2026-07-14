@@ -1,0 +1,22 @@
+Algoritmo PiramideInvertida
+    Definir filas, i, j, k, cantidad_asteriscos, cantidad_espacios Como Entero
+    
+    Escribir "Ingrese la altura de la piramide invertida (un numero entero):"
+    Leer filas
+    
+    Para i <- filas Hasta 1 Con Paso -1 Hacer
+        
+        cantidad_espacios <- filas - i
+        Para j <- 1 Hasta cantidad_espacios Con Paso 1 Hacer
+            Escribir " " Sin Saltar
+        FinPara
+        
+        cantidad_asteriscos <- (2 * i) - 1
+        Para k <- 1 Hasta cantidad_asteriscos Con Paso 1 Hacer
+            Escribir "*" Sin Saltar
+        FinPara
+        
+        Escribir ""
+        
+    FinPara
+FinAlgoritmo

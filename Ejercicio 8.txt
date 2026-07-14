@@ -1,0 +1,22 @@
+Algoritmo CalcularTotalPrestamo
+    Definir monto, interes_mensual, total_a_pagar Como Real
+    Definir meses Como Entero
+    
+    Escribir "Ingrese el monto del prestamo:"
+    Leer monto
+    
+    Escribir "Ingrese el numero de meses del plazo:"
+    Leer meses
+    
+    Escribir "Ingrese la tasa de interes mensual (en porcentaje, ej: 2 para 2%):"
+    Leer interes_mensual
+    
+    interes_mensual <- interes_mensual / 100
+    
+    total_a_pagar <- monto * (1 + interes_mensual) ^ meses
+    
+    Escribir "--- RESULTADO DEL PRESTAMO ---"
+    Escribir "Monto inicial: $", monto
+    Escribir "Plazo: ", meses, " meses"
+    Escribir "Total final a pagar (Capital + Intereses): $", total_a_pagar
+FinAlgoritmo

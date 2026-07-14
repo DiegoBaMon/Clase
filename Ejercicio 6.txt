@@ -1,0 +1,23 @@
+Algoritmo DescomponerFactoresPrimos
+    Definir num, divisor Como Entero
+    
+    Escribir "Ingrese un número entero positivo mayor a 1 para descomponer:"
+    Leer num
+    
+    Si num <= 1 Entonces
+        Escribir "Por favor ingrese un número mayor a 1."
+    Sino
+        Escribir "Los factores primos de ", num, " son:"
+        
+        divisor <- 2
+        
+        Mientras num > 1 Hacer
+            Si num % divisor == 0 Entonces
+                Escribir divisor
+                num <- num / divisor // Reducimos el número dividiéndolo
+            Sino
+                divisor <- divisor + 1
+            FinSi
+        FinMientras
+    FinSi
+FinAlgoritmo

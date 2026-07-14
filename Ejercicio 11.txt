@@ -1,0 +1,22 @@
+Algoritmo SimuladorDado
+    Definir i, lanzamiento, contador_unos Como Entero
+    
+    contador_unos <- 0
+    
+    Escribir "Simulando el lanzamiento de 50 dados..."
+    Escribir "---------------------------------------"
+    
+    Para i <- 1 Hasta 50 Con Paso 1 Hacer
+        lanzamiento <- Aleatorio(1, 6)
+        
+        Escribir "Lanzamiento ", i, ": salio el numero ", lanzamiento
+        
+        Si lanzamiento == 1 Entonces
+            contador_unos <- contador_unos + 1
+        FinSi
+    FinPara
+    
+    Escribir "---------------------------------------"
+    Escribir "¡Simulacion terminada!"
+    Escribir "El numero 1 salio un total de: ", contador_unos, " veces."
+FinAlgoritmo

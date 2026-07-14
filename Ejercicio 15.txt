@@ -1,0 +1,33 @@
+Algoritmo DiamanteAsteriscos
+    Definir filas, i, j, k, cantidad_asteriscos, cantidad_espacios Como Entero
+    
+    Escribir "Ingrese el tamaño del diamante (un numero entero):"
+    Leer filas
+    
+    Escribir "--- Aquí está tu diamante ---"
+    
+    Para i <- 1 Hasta filas Con Paso 1 Hacer
+        cantidad_espacios <- filas - i
+        Para j <- 1 Hasta cantidad_espacios Con Paso 1 Hacer
+            Escribir " " Sin Saltar
+        FinPara
+        cantidad_asteriscos <- (2 * i) - 1
+        Para k <- 1 Hasta cantidad_asteriscos Con Paso 1 Hacer
+            Escribir "*" Sin Saltar
+        FinPara
+        Escribir ""
+    FinPara
+    
+    Para i <- filas Hasta 1 Con Paso -1 Hacer
+        cantidad_espacios <- filas - i
+        Para j <- 1 Hasta cantidad_espacios Con Paso 1 Hacer
+            Escribir " " Sin Saltar
+        FinPara
+        cantidad_asteriscos <- (2 * i) - 1
+        Para k <- 1 Hasta cantidad_asteriscos Con Paso 1 Hacer
+            Escribir "*" Sin Saltar
+        FinPara
+        Escribir ""
+    FinPara
+    
+FinAlgoritmo

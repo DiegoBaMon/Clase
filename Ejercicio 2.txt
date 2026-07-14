@@ -1,0 +1,34 @@
+Algoritmo Ejercicio2
+    Definir N_actual Como Entero
+	Definir N_anterior Como Entero
+	Definir contador_impares Como Entero
+	
+    contador_impares <- 0
+    Escribir "ingresa el número:"
+    
+	Leer N_actual
+    
+    Si numero_actual % 2 <> 0 Entonces
+        contador_impares <- contador_impares + 1
+    FinSi
+    
+    N_anterior <- N_actual
+	
+    Mientras N_actual >= N_anterior Hacer
+        N_anterior <- N_actual 
+        
+        Escribir "Ingrese el siguiente número (menor para salir):"
+        Leer N_actual
+		
+        Si N_actual >= N_anterior Entonces
+            
+            Si N_actual % 2 <> 0 Entonces
+                contador_impares <- contador_impares + 1
+            FinSi
+        FinSi
+    FinMientras
+    
+    Escribir "El programa terminó."
+    Escribir "Número de números impares:", contador_impares
+	
+FinAlgoritmo

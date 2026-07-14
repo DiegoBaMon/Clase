@@ -1,0 +1,32 @@
+Algoritmo AdivinaElNumero
+    Definir numero_secreto, intento, numero_usuario Como Entero
+    
+    numero_secreto <- Aleatorio(1, 50)
+    intento <- 0
+    
+    Escribir "=== ¡BIENVENIDO AL JUEGO DE ADIVINAR! ==="
+    Escribir "He pensado un numero entre 1 y 50. Tienes 5 intentos para adivinarlo."
+    Escribir "------------------------------------------------------------------"
+    
+    Repetir
+        intento <- intento + 1
+        Escribir "Intentos usados: ", intento, "/5. Ingresa tu numero:"
+        Leer numero_usuario
+        
+        Si numero_usuario == numero_secreto Entonces
+            Escribir "¡Felicidades! Adivinaste el numero en el intento ", intento, "."
+        Sino
+            Si numero_usuario < numero_secreto Entonces
+                Escribir "Pista: El numero secreto es MAYOR que ", numero_usuario
+            Sino
+                Escribir "Pista: El numero secreto es MENOR que ", numero_usuario
+            FinSi
+            Escribir "--------------------------------------------------"
+        FinSi
+        
+    Hasta Que numero_usuario == numero_secreto o intento == 5
+    
+    Si numero_usuario <> numero_secreto Entonces
+        Escribir "¡Se agotaron tus intentos! El numero secreto era el: ", numero_secreto
+    FinSi
+FinAlgoritmo

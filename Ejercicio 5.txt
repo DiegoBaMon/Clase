@@ -1,0 +1,39 @@
+// Dejamos al ayudante del MCD, porque lo necesitamos para la fórmula
+SubProceso mcd_resultado <- CalcularMCD(a, b)
+    Definir residuo Como Entero
+    Mientras b <> 0 Hacer
+        residuo <- a % b
+        a <- b
+        b <- residuo
+    FinMientras
+    mcd_resultado <- a
+FinSubProceso
+
+
+SubProceso mcm_resultado <- CalcularMCM(a, b)
+    mcm_resultado <- (a * b) / CalcularMCD(a, b)
+FinSubProceso
+
+Algoritmo PuntoCincoMCM
+    Definir num, mcm_acumulado Como Entero
+    
+    Escribir "Ingrese el primer número entero positivo:"
+    Leer num
+    
+    Si num < 0 Entonces
+        Escribir "No ingresaste números válidos."
+    Sino
+        mcm_acumulado <- num
+        
+        Mientras num >= 0 Hacer
+            Escribir "Ingrese otro número (o un negativo para salir):"
+            Leer num
+            
+            Si num >= 0 Entonces
+                mcm_acumulado <- CalcularMCM(mcm_acumulado, num)
+            FinSi
+        FinMientras
+        
+        Escribir "El MCM de todos los números ingresados es: ", mcm_acumulado
+    FinSi
+FinAlgoritmo

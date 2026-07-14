@@ -1,0 +1,28 @@
+SubProceso resultado_fact <- CalcularFactorial(num)
+    Definir resultado_fact, i Como Entero
+    resultado_fact <- 1
+    Para i <- 1 Hasta num Con Paso 1 Hacer
+        resultado_fact <- resultado_fact * i
+    FinPara
+FinSubProceso
+
+Algoritmo CombinacionYPermutacion
+    Definir n, r Como Entero
+    Definir permutacion, combinacion Como Real
+    
+    Escribir "Ingrese el número total de elementos (el mayor, n):"
+    Leer n
+    Escribir "Ingrese los elementos por grupo (el menor, r):"
+    Leer r
+    
+    Si n < 0 o r < 0 o r > n Entonces
+        Escribir "Error: Los numeros deben ser positivos y n debe ser mayor o igual a r."
+    Sino
+        permutacion <- CalcularFactorial(n) / CalcularFactorial(n - r)
+        
+        combinacion <- CalcularFactorial(n) / (CalcularFactorial(r) * CalcularFactorial(n - r))
+        
+        Escribir "a. La Combinacion es: ", combinacion
+        Escribir "b. La Permutacion es: ", permutacion
+    FinSi
+FinAlgoritmo

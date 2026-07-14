@@ -1,0 +1,38 @@
+// Este bloque es una "ayudante" que calcula el MCD de dos números usando Euclides
+SubProceso mcd_resultado <- CalcularMCD(a, b)
+    Definir residuo Como Entero
+    Mientras b <> 0 Hacer
+        residuo <- a % b
+        a <- b
+        b <- residuo
+    FinMientras
+    mcd_resultado <- a
+FinSubProceso
+
+Algoritmo PuntoCuatroMCD
+    Definir num, mcd_acumulado Como Entero
+    
+    Escribir "Ingrese el primer número entero positivo:"
+    Leer num
+    
+    // Si el primer número ya es negativo, terminamos de una vez
+    Si num < 0 Entonces
+        Escribir "No ingresaste números válidos."
+    Sino
+        // Nuestro MCD inicial es el primer número que ingresas
+        mcd_acumulado <- num
+        
+        // Este ciclo se repite mientras sigan ingresando números positivos
+        Mientras num >= 0 Hacer
+            Escribir "Ingrese otro número (o un negativo para salir):"
+            Leer num
+            
+            // Solo calculamos el MCD si el nuevo número es positivo
+            Si num >= 0 Entonces
+                mcd_acumulado <- CalcularMCD(mcd_acumulado, num)
+            FinSi
+        FinMientras
+        
+        Escribir "El MCD de todos los números ingresados es: ", mcd_acumulado
+    FinSi
+FinAlgoritmo
