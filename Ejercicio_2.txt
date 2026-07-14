@@ -1,0 +1,47 @@
+Universidad: ejercicio 2 Karel.. de acá para abajo esta el código :) 
+
+iniciar-programa
+
+define-nueva-instruccion gira-derecha como inicio
+		repetir 3 veces inicio 
+    	gira-izquierda;
+        fin;
+	fin; 
+
+define-nueva-instruccion infinito como inicio
+    	mientras frente-libre hacer inicio
+        	avanza;
+            fin;
+	fin;
+
+define-nueva-instruccion diagonal como inicio
+    	mientras frente-libre hacer inicio
+        	deja-zumbador;
+            avanza;
+            deja-zumbador;
+            gira-izquierda;
+            avanza;
+            gira-derecha;
+            fin;
+	fin;
+
+define-nueva-instruccion infinitozumbador como inicio
+    	mientras no-junto-a-zumbador hacer inicio
+            deja-zumbador;
+            fin;
+	fin;
+
+    inicia-ejecucion
+        { TODO poner codigo aqui }
+        infinito;
+        gira-izquierda;
+        infinito;
+        gira-izquierda;
+        diagonal;
+infinitozumbador;
+
+      
+        apagate;
+
+    termina-ejecucion
+finalizar-programa
