@@ -1,0 +1,39 @@
+iniciar-programa
+
+    
+    define-nueva-instruccion gira-derecha como inicio
+        repetir 3 veces inicio
+        gira-izquierda;
+       fin;
+    fin;
+
+    inicia-ejecucion
+        { 1. Karel camina recto hacia el Norte hasta encontrar la pared }
+        mientras frente-libre hacer inicio
+            avanza;
+        fin;
+
+        { 2. Gira al Este para que la pared del techo le quede a la izquierda }
+        gira-derecha;
+
+        { 3. Avanza pegado a la pared (mientras su izquierda bloqueada) }
+        mientras izquierda-bloqueada hacer inicio
+            si frente-libre entonces inicio
+                avanza;
+            fin sino inicio
+                { Si choca en la esquina superior derecha, gira al Sur }
+                gira-derecha;
+            fin;
+        fin;
+
+        { 4. ¡Encontró la salida! (su izquierda ya no está bloqueada) }
+        gira-izquierda; { Gira viendo directo hacia afuera (Este) }
+        avanza;          { Cruza la puerta }
+        avanza;          { Da el paso final en el exterior }
+        
+        apagate;
+    termina-ejecucion
+
+
+    
+finalizar-programa

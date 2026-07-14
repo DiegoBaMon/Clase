@@ -1,0 +1,96 @@
+Ejercicio 3
+:::::::::::::::::::::::::
+
+iniciar-programa
+
+define-nueva-instruccion norte como inicio
+    mientras no-orientado-al-norte hacer inicio
+        gira-izquierda;
+    fin;
+fin;
+
+define-nueva-instruccion gira-derecha como inicio
+    repetir 3 veces inicio 
+        gira-izquierda;
+    fin;
+fin; 
+
+define-nueva-instruccion infinito como inicio
+    mientras frente-libre hacer inicio
+        avanza;
+    fin;
+fin;
+
+
+define-nueva-instruccion z como inicio
+    si junto-a-zumbador entonces inicio
+        coge-zumbador;
+    fin;
+    avanza; 
+fin;
+
+
+define-nueva-instruccion zumbador como inicio
+    mientras frente-libre hacer inicio
+        z;
+    fin;
+    si junto-a-zumbador entonces inicio
+        coge-zumbador;
+    fin;
+fin;
+
+define-nueva-instruccion giros como inicio
+    mientras frente-libre hacer inicio
+        zumbador;
+        gira-izquierda;
+        
+        si frente-libre entonces inicio
+            avanza;
+            gira-izquierda;
+            zumbador;
+            gira-derecha;
+            si frente-libre entonces inicio
+                avanza;
+                gira-derecha;
+            fin;
+        fin;
+    fin;
+fin;
+
+
+define-nueva-instruccion deposita-todo como inicio
+    mientras algún-zumbador-en-la-mochila hacer inicio
+        deja-zumbador;
+    fin;
+fin;
+
+define-nueva-instruccion resultado como inicio
+    si frente-libre entonces inicio
+        apagate;
+    fin
+    sino inicio
+        giros;
+    fin;
+fin;
+
+inicia-ejecucion
+
+    norte;
+    infinito;
+    gira-izquierda;
+    infinito;
+    gira-izquierda;     
+    giros;
+    
+   
+    si no-orientado-al-norte entonces inicio
+        gira-izquierda;
+        infinito;
+    fin;
+    
+    deposita-todo;     
+    apagate;
+    
+termina-ejecucion
+
+finalizar-programa
