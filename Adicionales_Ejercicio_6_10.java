@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Adicionales_Ejercicio_6_10 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        
+        // Genera un número aleatorio entre 1 y 100
+        int numeroSecreto = (int) (Math.random() * 100) + 1;
+        int intentosMaximos = 5;
+        boolean adivino = false;
+        
+        System.out.println("¡He pensado un número entre 1 y 100! Tienes 5 intentos para adivinarlo.");
+        System.out.println("=====================================================================");
+        
+        for (int i = 1; i <= intentosMaximos; i++) {
+            System.out.print("Intento " + i + ". Introduce tu número: ");
+            int intentoUsuario = teclado.nextInt();
+            
+            if (intentoUsuario == numeroSecreto) {
+                System.out.println("¡BUAJAJAJA ¡Felicidades! Lograste adivinar el número secreto.");
+                adivino = true;
+                break; // Rompe el bucle porque ya ganaste
+            } else if (intentoUsuario < numeroSecreto) {
+                System.out.println("-> El número secreto es MAYOR.");
+            } else {
+                System.out.println("-> El número secreto es MENOR.");
+            }
+            System.out.println(); // Deja un espacio en blanco para que se vea ordenado
+        }
+        
+        if (!adivino) {
+            System.out.println("Te quedaste sin intentos... El número secreto era: " + numeroSecreto);
+        }
+        
+        teclado.close();
+    }
+}

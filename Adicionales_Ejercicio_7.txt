@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Ejercicio7 {
+    // Método auxiliar para calcular el factorial de un número
+    public static long calcularFactorial(int num) {
+        long factorial = 1;
+        for (int i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.class);
+        
+        System.out.print("Introduce el primer número entero positivo (n): ");
+        int n = teclado.nextInt();
+        System.out.print("Introduce el segundo número entero positivo (m, debe ser menor o igual a n): ");
+        int m = teclado.nextInt();
+        
+        if (n >= m && n > 0 && m > 0) {
+            // Fórmulas matemáticas básicas usando factoriales
+            long permutacion = calcularFactorial(n) / calcularFactorial(n - m);
+            long combinacion = permutacion / calcularFactorial(m);
+            
+            System.out.println("La Permutación P(" + n + ", " + m + ") es: " + permutacion);
+            System.out.println("La Combinación C(" + n + ", " + m + ") es: " + combinacion);
+        } else {
+            System.out.println("Por favor, asegúrate de que los números sean positivos y n >= m.");
+        }
+        teclado.close();
+    }
+}

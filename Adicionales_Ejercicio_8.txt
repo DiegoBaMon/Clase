@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Ejercicio8 {
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.class);
+        
+        System.out.print("Introduce el monto del préstamo: ");
+        double monto = teclado.nextDouble();
+        
+        System.out.print("Introduce el número de meses: ");
+        int meses = teclado.nextInt();
+        
+        System.out.print("Introduce el porcentaje de interés mensual (ej: 2.5): ");
+        double tasaInteres = teclado.nextDouble();
+        
+        // Suponiendo interés simple para este ejercicio académico: Total = Monto + (Monto * Interés * Meses)
+        double totalIntereses = monto * (tasaInteres / 100) * meses;
+        double valorTotal = monto + totalIntereses;
+        
+        System.out.println("\n--- RESUMEN DEL PRÉSTAMO ---");
+        System.out.printf("Capital solicitado: $%.2f\n", monto);
+        System.out.printf("Total intereses generados: $%.2f\n", totalIntereses);
+        System.out.printf("VALOR TOTAL A PAGAR: $%.2f\n", valorTotal);
+        
+        teclado.close();
+    }
+}

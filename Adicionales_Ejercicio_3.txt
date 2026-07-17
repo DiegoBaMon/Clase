@@ -1,0 +1,9 @@
+# Pedimos el número de filas al usuario
+n = int(input("Introduce un número entero para la escalera: "))
+
+print("\nResultado:")
+for i in range(1, n + 1):
+    # La fórmula para obtener números impares (1, 3, 5, 7...) es (2 * i - 1)
+    numero_asteriscos = 2 * i - 1
+    # En Python, puedes multiplicar un texto por un número para repetirlo
+    print("*" * numero_asteriscos)
