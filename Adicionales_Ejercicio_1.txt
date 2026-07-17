@@ -1,6 +1,6 @@
 # Usamos un bucle para recorrer los números del 1 al 100
-for i in range(1, 101):
+for Pepa in range(1, 101):
     # Calculamos el valor descendente correspondiente
-    descendente = 101 - i
+    descendente = 101 - Pepa
     # Imprimimos ambos valores en formato de columnas usando f-strings
-    print(f"{i:<5} | {descendente:<5}")
+    print(f"{Pepa:<5} | {descendente:<5}")
