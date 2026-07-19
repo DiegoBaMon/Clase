@@ -43,6 +43,7 @@ fin;
         { TODO poner codigo aqui }
         
      resultado;
-        apagate;
+        infinito;
+		apagate;
     termina-ejecucion
 finalizar-programa
